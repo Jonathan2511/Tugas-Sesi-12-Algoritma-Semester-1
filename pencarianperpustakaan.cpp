@@ -1,24 +1,30 @@
+// DATA PERPUSTAKAAN PERBULAN
+// KELOMPOK 4 SEMESTER 1 KJ004
 #include <iostream>
+#include <string>
+#include <stdlib.h>
 using namespace std;
 
-void genree(){
-    string genre[4] = {"Horror", "Fantasy", "Action", "Romance"};
+void bulann(){
+    string bulan[4] = {"Mei", "Juni", "July", "Agustus"};
     for(int i = 0; i < 4; i++) {
-    cout << i << ". " << genre[i] << "\n";
+    cout << i << ". " << bulan[i] << "\n";
 	}
+	return;
 }
 
 string jeniss(){
     string jenis[3] = {"Buku", "Novel", "Komik"};
     for(int i = 0; i < 3; i++) {
     cout << i << ": " << jenis[i] << "\n";
-    }
-}
+    } 
+    return "jenis";
+} 
 
 int main()
 {
  int data[4][3];
- int genre,jenis;
+ int bulan,jenis;
  
  data[0][0]=12;
  data[0][1]=16;
@@ -36,30 +42,37 @@ int main()
  data[3][1]=12;
  data[3][2]=12;
 
-cout<<"==================================="<<endl; 
-cout<<"Data Peminjaman Perpustakaan"<<endl;
-cout<<"==================================="<<endl; 
-cout<<"Pilih salah satu genre"<<endl;
+
 while(1){
-    genree(); 
-    cout<<"Pilih nomor: ";cin>>genre;
-    if(genre<4 && genre>=0){
+cout<<"====================================="<<endl; 
+cout<<"Data Peminjaman Perpustakaan Perbulan"<<endl;
+cout<<"====================================="<<endl; 
+cout<<"Pilih salah satu bulan"<<endl;
+    bulann(); 
+    cout<<"Pilih nomor: ";cin>>bulan;
+    if(bulan<4 && bulan>=0){
     break;}
 	else {cout << "Nomor tidak valid. Masukkan ulang" << endl;}
+	system ("CLS");
+	cout << "\033[1;31m!!!NOMOR YANG DIMASUKKAN TIDAK VALID. SILAHKAN MASUKKAN ULANG!!!\033[0m" << endl;
 }
 
-cout<<"==================================="<<endl; 
-cout<<"Pilih salah satu jenis"<<endl;
 while(1){
+cout<<"====================================="<<endl; 
+cout<<"Pilih salah satu jenis"<<endl;
+cout<<"====================================="<<endl; 
  jeniss();
  cout<< "Pilih nomor: ";cin>>jenis;
  if(jenis<3 && jenis>=0){
  break;}
  else {cout << "Nomor tidak valid. Masukkan ulang" << endl;}
+ system ("CLS");
+ cout << "\033[1;31m!!!NOMOR YANG DIMASUKKAN TIDAK VALID. SILAHKAN MASUKKAN ULANG!!!\033[0m" << endl;	
+
 }
 
-cout<<"==================================="<<endl; 
-cout<<"Jumlah peminjaman : " <<data[genre][jenis]<<endl;
+cout<<"====================================="<<endl; 
+cout<<"Jumlah peminjaman : " <<data[bulan][jenis]<< " orang"<<endl;
 
 
 return 0;
